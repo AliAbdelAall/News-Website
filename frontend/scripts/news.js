@@ -54,3 +54,10 @@ const addNews = (title, content) => {
     }
   })
 }
+
+news_form.submit((event) => {
+  event.preventDefault()
+  if (title_input.val() !== "" && content_input.val() !== "") {
+    addNews(title_input.val(), content_input.val())
+  }
+})

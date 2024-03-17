@@ -36,3 +36,21 @@ const displayNews = (data) => {
     news_container.append(news_div)
   })
 }
+
+const addNews = (title, content) => {
+  $.ajax({
+    url: "http://127.0.0.1/News-Website/backend/save-news.php",
+    method: "POST",
+    data: {
+      "title": title,
+      "content": content
+    },
+    dataType: "json",
+    success: (data) => {
+      loadNews()
+    },
+    error: (error) => {
+      console.error(error)
+    }
+  })
+}

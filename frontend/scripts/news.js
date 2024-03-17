@@ -16,27 +16,23 @@ const loadNews = () => {
       console.error(error)
     }
   })
-  // fetch("http://127.0.0.1/News-Website/backend/get-news.php", {
-  //   method: 'GET'
-  // })
-  //   .then((response) => {
-  //     return response.json()
-
-  //   }).then((data) => {
-  //     console.log(data)
-  //     // displayNews(data)
-
-  //   }).catch((error) => {
-  //     console.error(error)
-  //   })
 }
-// loadNews()
-// const displayNews = (data) => {
-//   news_container.empty()
-//   $.each(data.news, (i, news) => {
-//     const news_div = $("<div>").addClass("flex column gap-10 news-wrapper")
 
-//     const
+loadNews()
 
-//   })
-// }
+
+const displayNews = (data) => {
+  news_container.empty()
+  $.each(data.news, (i, news) => {
+    const news_div = $("<div>").addClass("flex column gap-10 news-wrapper")
+
+    const title = $("<h2>").text(news.title)
+
+    const content = $("<p>").text(news.content)
+
+    news_div.append(title)
+    news_div.append(content)
+
+    news_container.append(news_div)
+  })
+}

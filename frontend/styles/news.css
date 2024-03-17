@@ -2,11 +2,22 @@
   padding: 40px 60px;
 }
 
+.page-container h1{
+  margin-bottom: 30px;
+}
+
 .news-container{
   height: 85vh;
   overflow-y: scroll;
 }
 
 .news-wrapper{
-  padding: 40px 40px;
+  padding: 30px 40px;
+}
+
+button{
+  background-color: rgb(66, 66, 66); 
+  color: azure;
+  font-weight: bold;
+  cursor: pointer;
 }

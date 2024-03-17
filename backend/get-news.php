@@ -1,13 +1,13 @@
 <?php
 include("connection.php");
 
-$query = mysqli->prepare("select * from news");
-$query -> excute();
+$query = $mysqli->prepare("select * from news");
+$query -> execute();
 $query -> store_result();
-$num_rows = $query -> numrows();
+$num_rows = $query -> num_rows();
 
 if($num_rows === 0){
-  $response["status"] = "no news foud";
+  $response["status"] = "no news found";
 }else{
   $news_list = [];
   $query -> bind_result($id, $title, $content);
@@ -22,4 +22,6 @@ if($num_rows === 0){
   $response["status"] = "success";
   $response["news"] = $news_list;
 }
+
+echo json_encode($response);
 

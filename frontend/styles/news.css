@@ -1,0 +1,12 @@
+.page-container{
+  padding: 40px 60px;
+}
+
+.news-container{
+  height: 85vh;
+  overflow-y: scroll;
+}
+
+.news-wrapper{
+  padding: 40px 40px;
+}
